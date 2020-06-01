@@ -20,8 +20,8 @@ def unite_list(A, first, last):
     i, j = first, m+1
     B = []
     while i <= m and j <= last:
-        if A[i][0] <= A[j][0]:
-            B.append(A[i])
+        if A[i][0] <= A[j][0]: 
+            B.append(A[i]) #여기가 포인트! age가 같으면 먼저 입력된 데이터부터 append해준다.
             i += 1
         else:
             B.append(A[j])

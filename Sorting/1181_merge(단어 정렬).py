@@ -39,7 +39,7 @@ def unite_twoList(li, first, last):
     for x in range(j, last + 1):
         U.append(li[x])
     for i in range(first, last + 1):
-        li[i] = U[i - first]
+        li[i] = U[i - first] #U[0]부터 데이터가 담겨 있으므로!
 
 merge_sort(li, 0, len(li)-1)
 for x in li:
