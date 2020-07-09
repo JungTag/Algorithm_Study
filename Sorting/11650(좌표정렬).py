@@ -3,10 +3,10 @@ import sys
 n = int(input())
 input_list = [sys.stdin.readline().rstrip() for i in range(n)]
 li =[]
+
+
 for x in input_list:
     li.append(list(map(int, x.split()))) #좌표를 리스트로 만들어 li에 append
-
-
 def quick_sort(li, first, last):
     if first >= last: return
     pivot = li[first]
