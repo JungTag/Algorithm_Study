@@ -17,7 +17,7 @@ def merge_two_lists(A, first, last):
         elif A[i][1] > A[j][1]: 
             B.append(A[j])
             j += 1
-        else:
+        else: 
             if A[i][0] < A[j][0]:
                 B.append(A[i])
                 i += 1
