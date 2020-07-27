@@ -1,0 +1,38 @@
+입력은 동일하게 3(n), 1, 2, 3
+
+코드1)
+import sys
+n = int(input())
+input_list = [sys.stdin.readline().split() for i in range(n)]
+print(input_list)
+출력:[['1'],['2'],['3']]
+
+코드2)
+import sys
+n = int(input())
+input_list = [sys.stdin.readline().strip() for i in range(n)]
+print(input_list)
+출력:['1','2,'3']
+
+=>중요!: split은 쪼개서 리스트화 시킨다. 따라서 한 줄에 여러개의 입력이 있을 때 사용하자!
+
+
+coin_list = [sys.stdin.readline().strip() for i in range(N)]
+coin_list = list(map(int, coin_list))
+-> 간단하게!!(한 줄에 한 개) money = [int(sys.stdin.readline().strip()) for i in range(repeat)]
+
+한 줄에 여러 개 입력
+a = [int(x) for x in input().strip().split()]
+a = list(map(int, input().strip().split()))
+
+방법1.
+P = input().strip().split() -> 이미 리스트
+P = list(map(int, P))
+방법2.
+P = [int(x) for x in input().strip().split()]
+
+*** 한 줄에 여러 개 입력받기(sys.stdin.readline() 이용)
+input_list = []
+for i in range(n):
+    input_list.append([int(x) for x in sys.stdin.readline().strip().split()])
+print(input_list)
