@@ -32,7 +32,7 @@ P = list(map(int, P))
 P = [int(x) for x in input().strip().split()]
 
 *** 한 줄에 여러 개 입력받기(sys.stdin.readline() 이용)
+-> BFS/DFS이용
 input_list = []
 for i in range(n):
     input_list.append([int(x) for x in sys.stdin.readline().strip().split()])
-print(input_list)
