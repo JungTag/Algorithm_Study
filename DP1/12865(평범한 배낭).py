@@ -1,3 +1,7 @@
+'''
+1차원 리스트로 만들면 한계가 있다(최적해가 안 구해짐)
+2차원 리스트로 만들고 현재 행과 윗 행의 요소를 비교하여 테이블을 채운다.
+'''
 import sys
 N, K = map(int, sys.stdin.readline().split())
 knap_list = []
