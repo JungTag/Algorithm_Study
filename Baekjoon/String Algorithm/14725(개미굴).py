@@ -27,7 +27,7 @@ N = int(sys.stdin.readline().strip())
 nest = Trie()
 for _ in range(N):
     input_line = sys.stdin.readline().split()
-    K = input_line[0]
+    K = input_line[0 ]
     foods = input_line[1:]
     nest.add(foods)
 nest.travel(0, nest.root)
