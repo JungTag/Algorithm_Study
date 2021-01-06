@@ -5,13 +5,14 @@ max_num = 0
 
 dx = [0, 0, -1, 1]
 dy = [-1, 1, 0, 0]
-wall_list = []
-virus_queue = []
+empty_list = []
+virus_list = []
 
 EMPTY = 0
 WALL = 1
 VIRUS = 2
 
+# 입력
 g = [[0]*m for _ in range(n)]
 
 for y in range(n):
@@ -20,18 +21,17 @@ for y in range(n):
     for x in range(m):
         g[y][x] = raw[x]
         if g[y][x] == EMPTY:
-            wall_list.append([y, x]) # wall_list.append(10*y + x)도 가능
+            empty_list.append([y, x]) # empty_list.append(10*y + x)도 가능
         if g[y][x] == VIRUS:
-            virus_queue.append([y, x])
+            virus_list.append([y, x])
 
-
+# bfs 탐색
 def bfs(ng):
     q = collections.deque([])
-    visited = [[False]*m for _ in range(n)]
     cnt = 0
     global max_num
 
-    for virus in virus_queue:
+    for virus in virus_list:
         q.append(virus)
 
     while q:
@@ -43,10 +43,9 @@ def bfs(ng):
 
             if ny < 0 or ny >= n or nx < 0 or nx >= m:
                 continue
-            if ng[ny][nx] == EMPTY and visited[ny][nx] == False:
+            if ng[ny][nx] == EMPTY:
                 q.append([ny, nx])
                 ng[ny][nx] = VIRUS
-                visited[ny][nx] = True
     
     for i in range(n):
         cnt += ng[i].count(EMPTY)
@@ -54,13 +53,13 @@ def bfs(ng):
     if max_num < cnt:
         max_num = cnt
 
-
-for i in range(len(wall_list)):
+# 벽 세우기
+for i in range(len(empty_list)):
     for j in range(i):
         for k in range(j):
-            y1, x1 = wall_list[i]
-            y2, x2 = wall_list[j]
-            y3, x3 = wall_list[k]
+            y1, x1 = empty_list[i]
+            y2, x2 = empty_list[j]
+            y3, x3 = empty_list[k]
 
             g[y1][x1] = WALL
             g[y2][x2] = WALL
