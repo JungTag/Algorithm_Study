@@ -7,7 +7,7 @@ dp = [0 for _ in range(k+1)]
 for _ in range(n):
     coins.append(int(sys.stdin.readline().strip()))
 
-coins = [0]+list(set(coins)) # 중복 제거
+coins = list(set(coins)) # 중복 제거
 
 for coin in coins:
     dp[0] = 1
