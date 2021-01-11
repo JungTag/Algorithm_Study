@@ -20,7 +20,7 @@ print(cnt)
 def solve(idx, total):
     global cnt
     if idx >= n:
-        return
+        return   
     
     total += nums[idx]
     if total == s:

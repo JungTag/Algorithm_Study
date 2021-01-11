@@ -35,8 +35,7 @@ while True:
                     visited[ny][nx] = 1
                     q.append([ny, nx])
 
-    for land in lands:
-        
+    for land in lands:    
         if visited[land[0]][land[1]] == 0:
             bfs(land[0], land[1])
             cnt += 1

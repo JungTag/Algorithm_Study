@@ -32,7 +32,6 @@ while True:
                 dfs(ny, nx) 
 
     for land in lands:
-
         if visited[land[0]][land[1]] == 0:
             dfs(land[0], land[1])
             cnt += 1
