@@ -19,7 +19,7 @@ result = 1
 MAX = float('-inf')
 n = int(sys.stdin.readline().strip())
 
-
+# input
 for _ in range(n):
     _input = [int(x) for x in sys.stdin.readline().split()]
     _max = max(_input)
@@ -27,8 +27,8 @@ for _ in range(n):
         MAX = _max
     g.append(_input)
 
-
-for i in range(1, MAX+1):
+# DFS
+for i in range(1, MAX):
     visited = [[0]*n for _ in range(n)]
     cnt = 0
     for j in range(n):
