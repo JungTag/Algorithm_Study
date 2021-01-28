@@ -4,13 +4,13 @@ sys.setrecursionlimit(10**9)
 def dfs(y, x, d, state):
     global cnt
     
-    if state: # if state == 1 -> 1번 / if statee == 0 -> 2번
+    if state: # if state == 1 -> 1번 / if state == 0 -> 2번
         visited[y][x] = 1
         cnt += 1
 
     nd = d
 
-    for _ in range(4):
+    for _ in range(4): # b
         nd = turn[nd]
         ny, nx = y + advance[nd][0], x + advance[nd][1]
         
