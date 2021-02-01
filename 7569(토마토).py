@@ -32,7 +32,7 @@ m, n, k = map(int, sys.stdin.readline().split())
 g = [[[0 for _ in range(m)] for _ in range(n)] for _ in range(k)]
 ripe = []
 empty = []
-days = float('inf')
+days = 0
 
 for z in range(k):
     for y in range(n):
