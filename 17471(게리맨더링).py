@@ -14,13 +14,6 @@ def bfs(same):
                 visited.add(u)
     return _sum, len(visited)
 
-def cal_rests(combi):
-    rests = [i for i in range(n) if i not in combi]
-    _sum = 0
-    for rest in rests:
-        _sum += pp[rest]
-    return _sum
-
 n = int(sys.stdin.readline().strip())
 pp = [int(x) for x in sys.stdin.readline().split()]
 g = collections.defaultdict(list)
@@ -36,7 +29,7 @@ for i in range(1, n//2 + 1):
     for combi in combis:
         sum1, v1 = bfs(combi)
         sum2, v2 = bfs([i for i in range(n) if i not in combi])
-        if v1 + v2 == n:
+        if v1 + v2 == n: #2번의 bfs를 통해 모든 노드가 방문되었는지 확인한다.
             result = min(result, abs(sum1 - sum2))
 
 if result != float('inf'):
