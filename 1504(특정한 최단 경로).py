@@ -17,11 +17,11 @@ def dijkstra(s):
     dist[s] = 0
     q = [[dist[s], s]]
     while q:
-        v = heapq.heappop(q)[1]
-        for u, c in g[v]:
-            if dist[u] > dist[v] + c:
-                dist[u] = dist[v] + c
-                heapq.heappush(q, [dist[u], u])
+        u = heapq.heappop(q)[1]
+        for v, c in g[u]:
+            if dist[v] > dist[u] + c:
+                dist[v] = dist[u] + c
+                heapq.heappush(q, [dist[v], v])
     return dist
 
 def solve():
