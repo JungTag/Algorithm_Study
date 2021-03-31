@@ -8,7 +8,7 @@ def dfs(depth, visited):
         result = max(result, len(visited))
         return
 
-    dfs(depth+1, visited) # 탐색 건너뜀
+    dfs(depth+1, visited)
 
     idx = robots[depth]
     for i in range(idx-k, idx+k+1):
@@ -19,7 +19,7 @@ def dfs(depth, visited):
 
 
 n, k = map(int, sys.stdin.readline().split())
-line = sys.stdin.readline().strip() # P는 로봇, H는 부품
+line = sys.stdin.readline().strip()
 
 result = limit = 0
 robots = []
