@@ -1,6 +1,5 @@
 # https://www.acmicpc.net/problem/2667
 import sys
-import collections
 sys.setrecursionlimit(10**6)
 
 def dfs(y, x, cnt):
