@@ -4,6 +4,7 @@ import collections
 
 def bfs(start):
     cnt = 1
+    visited = [0 for _ in range(n+1)]
     visited[start] = 1
     queue = collections.deque([start])
     while queue:
@@ -22,10 +23,8 @@ for _ in range(m):
     g[b].append(a)
 
 results = []
-visited = []
 max_cnt = 0
 for i in range(1, n+1):
-    visited = [0 for _ in range(n+1)]
     cnt = bfs(i)
     if cnt > max_cnt:
         max_cnt = cnt
