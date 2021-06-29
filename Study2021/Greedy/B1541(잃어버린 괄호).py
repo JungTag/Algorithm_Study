@@ -16,7 +16,7 @@ def make_queue():
 def cal_queue():
     status = '+'
     result = 0
-    for i, char in enumerate(queue):
+    for char in queue:
         if status == '-':
             if char.isdigit(): # 숫자이면
                 result -= int(char)

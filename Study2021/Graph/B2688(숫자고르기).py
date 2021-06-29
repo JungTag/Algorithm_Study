@@ -17,7 +17,7 @@ n = int(sys.stdin.readline().strip())
 g = defaultdict(list)
 for i in range(1, n+1):
     v = int(sys.stdin.readline().strip())
-    g[v].append(i)
+    g[i].append(v)
 
 checked = [0 for _ in range(n+1)]
 result = []

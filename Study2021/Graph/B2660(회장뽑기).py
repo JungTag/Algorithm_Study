@@ -1,6 +1,6 @@
+# https://www.acmicpc.net/problem/2660
 import sys
 from collections import deque, defaultdict
-# https://www.acmicpc.net/problem/2660
 
 def bfs(start):
     queue = deque([[start, 0]])
