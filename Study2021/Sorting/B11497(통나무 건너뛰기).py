@@ -1,6 +1,7 @@
 # https://www.acmicpc.net/problem/11497
-# 이상하게 품... 리스트 생성하는데 시간 오래 걸림..
-
+'''
+이상하게 품... 리스트 생성하는데 시간 오래 걸림..
+'''
 import sys
 
 def centralize():
