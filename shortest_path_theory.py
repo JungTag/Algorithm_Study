@@ -1,4 +1,4 @@
-...
+import collections, heapq
 graph = collections.defaultdict(list)
 
 for u, v, w in inputs: # 양방향 그래프라고 가정
