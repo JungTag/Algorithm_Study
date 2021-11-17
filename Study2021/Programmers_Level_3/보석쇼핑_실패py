@@ -1,0 +1,54 @@
+def solution(gems):
+    answer = []
+    gems_set = set()
+    num_of_gem = []
+
+    # 보석의 종류를 집합을 통해 구한다.
+    gem_cnt = 0
+    for gem in gems:
+        if gem not in gems_set:
+            gems_set.add(gem)
+            gem_cnt += 1
+        num_of_gem.append(gem_cnt)
+
+    NUM_OF_GEMS = len(gems)
+    NUM_OF_GEMS_SET = len(gems_set)
+
+    start, end = 0, NUM_OF_GEMS
+
+    # 보석이 모두 포함되는 시점의 인덱스(end)를 구한다.
+    for i, num in enumerate(num_of_gem):
+        if num == NUM_OF_GEMS_SET:
+            end = i
+            break
+    
+    # end부터 시작하여 보석이 모두 포함되는 시점의 인덱스(start)를 구한다.
+    check_set = set()
+    check_cnt = 0
+    for i in range(end, -1, -1):
+        gem = gems[i]
+        if gem not in check_set:
+            check_set.add(gem)
+            check_cnt += 1
+        if check_cnt == NUM_OF_GEMS_SET:
+            start = i
+            break
+    
+    answer = [start+1, end+1]
+
+    return answer
+
+    
+print(solution(["A","A","A","B","B"])) # [3,4]
+print(solution(["A"]))  # [1,1]
+print(solution(["A","B","B","B","B","B","B","C","B","A"])) # [8,10]
+'''
+@ 조건: O(nlogn)
+gems -> set
+
+1. for문 돌면서 gems_set 만듦, 이때 집합의 원소 개수 기록
+2. 뒤에서부터 for문 돌면서 원소 개수 == len(gems_set)인 최소 인덱스(end) 구함
+3. end부터 set하나 만들고 cnt 기록해두면서 체크!!
+4. cnt == len(gems_set)인 인덱스(start) 구함
+
+'''

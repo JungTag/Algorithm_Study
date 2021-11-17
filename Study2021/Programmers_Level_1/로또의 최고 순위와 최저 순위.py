@@ -1,14 +1,16 @@
 def solution(lottos, win_nums):
     answer = []
-    cnt = 0
-    c_cnt = 0
+    zero_cnt = 0
+    correct_cnt = 0
     win_nums_set = set(win_nums)
+
     for lotto in lottos:
         if lotto == 0:
-            cnt += 1
+            zero_cnt += 1
         elif lotto in win_nums_set:
-            c_cnt += 1
-    answer = [get_grade(c_cnt + cnt), get_grade(c_cnt)]        
+            correct_cnt += 1
+            
+    answer = [get_grade(correct_cnt + zero_cnt), get_grade(correct_cnt)]        
     return answer
 
 def get_grade(cnt):
