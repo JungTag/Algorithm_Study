@@ -1,6 +1,7 @@
 import sys
 
-def solve():
+
+def solution():
     pass
 
 
